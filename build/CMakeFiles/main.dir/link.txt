@@ -1,0 +1,1 @@
+/usr/bin/cc -s CMakeFiles/main.dir/src/main.c.o CMakeFiles/main.dir/src/string_to_float.c.o -o main  -lm 
