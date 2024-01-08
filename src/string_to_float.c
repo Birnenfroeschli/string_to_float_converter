@@ -4,13 +4,11 @@ bool string_to_float(const char *str, double *d)
 {
     //Variable initialization
     int16_t i = 0;
-    int16_t num_array[100];
+    int16_t num_array[100] = {0};
 
     int point_pos = 0;
     int pos = 0;
     int j = 0;
-    *d = 2601.1999;
-
 
     double result = 0;
 
@@ -22,6 +20,7 @@ bool string_to_float(const char *str, double *d)
         {
             num_array[i-pos] = str[i] - '0';
             //printf("Added to array: ");
+
         }
 
         else if (str[i] == '.')
@@ -55,11 +54,13 @@ bool string_to_float(const char *str, double *d)
     }
     else if (pos != 0)
     {
+
         j = point_pos;
         while(i >= 0)
         {
             result += num_array[i]*pow(10, j-i);
             i--;
+            printf("Result 2 :%f\n\n", result);
         }
     }
     else 
@@ -69,8 +70,11 @@ bool string_to_float(const char *str, double *d)
     //printf("Ur result: %lf\n", result);
 
     //Writing result 
+    printf("Your result: %f\n", result);
     *d = result;
-    
+    printf("What is in d :%f\n", *d);
     return 1;
+
+    printf("\n\n");
     //Output
 }

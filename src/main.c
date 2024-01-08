@@ -11,8 +11,8 @@ int main()
     scanf("%s", your_string);
     printf("Your entered string is: %s\n", your_string);*/
     double test = 0;
-    string_to_float("12.12", &test); 
-    printf("%f\n", test);
+    string_to_float("0.123", &test); 
+    printf("test: %f\n", test);
 
     return 0;
 }

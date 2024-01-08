@@ -48,44 +48,35 @@ void handle_invalid_inputs()
 void floating_points_0()
 {
     TEST_ASSERT_TRUE(string_to_float("12.12", &test));
-    test = 12.12;
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(12.12, test, "Converted string is not equal to 12.12"); 
 }
 
 void floating_points_1()
 {
     TEST_ASSERT_TRUE(string_to_float("0.123", &test));
-    test = 0.123;
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.123, test, "Converted string is not equal to 0.123"); 
 }
 
 void floating_points_2()
 {
     TEST_ASSERT_TRUE(string_to_float("12.123", &test));
-    test = 12.123;
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(12.123, test, "Converted string is not equal to 12.123");  
 }
 
 void floating_points()
 {
     test = 0;
-    printf("Adress: %p\n", &test);
-    printf("Value: %lf\n", test);
-
-    string_to_float("12.12", &test);
-    
-
-    printf("Adress: %p\n", &test);
-    printf("Value: %lf\n", test);
-
+    TEST_ASSERT_TRUE(string_to_float("12.12", &test));
+    printf("%f", test);
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(12.12, test, "Converted string is not equal to 12.12"); 
 
     TEST_ASSERT_TRUE(string_to_float("0.123", &test));
-    test = 0.123;
+    printf("%f", test);
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.123, test, "Converted string is not equal to 0.123"); 
 
     TEST_ASSERT_TRUE(string_to_float("12.123", &test));
-    test = 12.123;
+    printf("%f", test);
+
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(12.123, test, "Converted string is not equal to 12.123");  
 }
 
@@ -109,13 +100,13 @@ void evaluate_signs()
 int main()
 {
     UNITY_BEGIN();
-    //RUN_TEST(parse_positive_integers);
-    //RUN_TEST(is_double);
-    //RUN_TEST(handle_invalid_inputs);
+    RUN_TEST(parse_positive_integers);
+    RUN_TEST(is_double);
+    RUN_TEST(handle_invalid_inputs);
     RUN_TEST(floating_points_0);
     RUN_TEST(floating_points_1);
     RUN_TEST(floating_points_2);
     RUN_TEST(floating_points);
-    //RUN_TEST(parse_incomplete_floating_point);
+    RUN_TEST(parse_incomplete_floating_point);
     return UNITY_END();
 }
