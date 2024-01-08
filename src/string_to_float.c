@@ -1,48 +1,47 @@
-#include "../include/string_to_float.h"
+#include "string_to_float.h"
 
 bool string_to_float(const char *str, double *d)
 {
-    //Variable initialization
-    int16_t i = 0;
-    int16_t num_array[100] = {0};
-
-    int point_pos = 0;
-    int pos = 0;
-    int j = 0;
-
+    int8_t i = 0;
+    int8_t num_array[100] = {0};
+    int8_t sign = 1;
+    int8_t point_pos = 0;
+    int8_t pos = 0;
+    int8_t j = 0;
     double result = 0;
 
-    //Conversion
-    //Fitting every member of our string as one member into an array
+    if(str[0] == '+')
+    {
+        i = 1;
+    }
+    if(str[0] == '-')
+    {
+        i = 1;
+        sign = -1;
+    }
+
+    // Writing numerical values into array
     while(str[i] != '\0')
     {   
         if (str[i] >= '0' && str[i] <= '9' )
         {
-            num_array[i-pos] = str[i] - '0';
-            //printf("Added to array: ");
-
+            num_array[i-pos] = str[i] - '0'; // Subtracting ASCII '0' to get numerical value
         }
-
         else if (str[i] == '.')
         {
-            //printf("You got a point.\n");
             point_pos = i-1;   
             pos++; 
         }
-
         else
         {
             printf("Please enter a valid string\n");
-            return 0;
+            return false;
         }
-
-        //printf("%d\n", num_array[i-pos]);
         i++;
     }
-
     i--;
     
-    //Combining said array to double
+    // Adding the numerical array to single double
     if(pos == 0)
     {
         j = i;
@@ -54,27 +53,18 @@ bool string_to_float(const char *str, double *d)
     }
     else if (pos != 0)
     {
-
         j = point_pos;
         while(i >= 0)
         {
             result += num_array[i]*pow(10, j-i);
             i--;
-            printf("Result 2 :%f\n\n", result);
         }
     }
     else 
     {
         result = 0;
     }
-    //printf("Ur result: %lf\n", result);
-
-    //Writing result 
-    printf("Your result: %f\n", result);
+    result *= sign;
     *d = result;
-    printf("What is in d :%f\n", *d);
-    return 1;
-
-    printf("\n\n");
-    //Output
+    return true;
 }
