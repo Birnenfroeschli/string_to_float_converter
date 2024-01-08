@@ -1,4 +1,0 @@
-/home/madame/Documents/Semester 5/SOFENG/Project_2/string_to_float_converter/build/CMakeFiles/main.dir
-/home/madame/Documents/Semester 5/SOFENG/Project_2/string_to_float_converter/build/CMakeFiles/run_unit_tests.dir
-/home/madame/Documents/Semester 5/SOFENG/Project_2/string_to_float_converter/build/CMakeFiles/edit_cache.dir
-/home/madame/Documents/Semester 5/SOFENG/Project_2/string_to_float_converter/build/CMakeFiles/rebuild_cache.dir

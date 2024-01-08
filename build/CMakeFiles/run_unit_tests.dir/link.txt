@@ -1,1 +1,0 @@
-/usr/bin/cc -lasan CMakeFiles/run_unit_tests.dir/src/unity.c.o CMakeFiles/run_unit_tests.dir/src/string_to_float.c.o CMakeFiles/run_unit_tests.dir/test/test_string_to_float.c.o -o run_unit_tests  -lm 

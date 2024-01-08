@@ -15,13 +15,12 @@ void tearDown(void)
 }
 
 
-//Our tests
-
 void parse_positive_integers()
 {
     double test = 0;
     TEST_ASSERT_TRUE(string_to_float("10", &test));
 }
+
 
 void is_double()
 {
@@ -57,11 +56,13 @@ void floating_points_1()
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(0.123, test, "Converted string is not equal to 0.123"); 
 }
 
+
 void floating_points_2()
 {
     TEST_ASSERT_TRUE(string_to_float("12.123", &test));
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(12.123, test, "Converted string is not equal to 12.123");  
 }
+
 
 void floating_points()
 {
@@ -79,6 +80,7 @@ void floating_points()
 
     TEST_ASSERT_EQUAL_DOUBLE_MESSAGE(12.123, test, "Converted string is not equal to 12.123");  
 }
+
 
 void parse_incomplete_floating_point()
 {
